@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+    <head>
+    
+        <meta charset="UTF-8">
+        <title>Bem Te Vi</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet' href="{% static 'css/home.css' %}">
+        <link rel="icon" href="{% static 'img/bem te vi logo 1.svg' %}" >
+    </head>
+<body>
+    
+        <header class="conteiner">
+
+            <div class="padlogo">
+                <a href="{% url 'home' %}">
+                     <img src="{% static 'img/bem te vi logo 2.svg' %}"> </a>
+    
+                <h2>BemTeVi </h2>
+            </div>
+            <ul class="list_icons">
+                <li class="icon_header">
+                    <a href="{% url 'social' %}">
+                        <img src="{% static 'icones/direct_icon correct white.svg'%}"> </li>
+                </a>
+                <li class="icon_header">
+                    <a href="{% url 'favorites' %}">
+                        <img src="{% static 'icones/heart_icon white.svg' %}"> </li>
+    
+                </li>
+                </a>
+                <li class="icon_header">
+                    <a href="{% url 'myuser' %}">
+                        <img src="{% static 'icones/user_icon white.svg' %}"> </li>
+
+
+                    </a>
+                    <li class="icon_header">
+                        <a href="#">
+                            <img src="{% static 'icones/msg_icon withe.svg' %}"> </li>
+    
+    
+                </li>
+                </a>
+                <li class="icon_header">
+                    <a href="{% url 'settings' %}">
+                        <img src="{% static 'icones/settings_icon.svg'%}"> </li>
+    
+
+                        <li class="icon_header">
+                            <a href="{% url 'myinsights' %}">
+                                <img src="{% static 'icones/insights_icon.svg'%}"> </li>
+
+                </li>
+                </a>
+                <a href="#" class="inscreva-se-btn">
+                    <li>Já tem uma conta?</li>
+                </a>
+            </ul>
+       
+    
+    </header>
+
+    {% block content %}
+
+    {% endblock content %}
+</body>
+</html>

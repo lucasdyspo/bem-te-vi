@@ -1,9 +1,11 @@
-
+{% extends 'base.html' %}
+{%block content%}
+<body>
    <div class="col-md">
     <h1>Cadastre-se</h1>
     <hr>
 
-    <form method="POST" action="{% url 'validar_cadastro' %}">{% csrf_token %}
+    <form method="POST" action="{% url 'validar_login' %}">{% csrf_token %}
 
          <label>Nome</label>
          <input name="nome" class="form-control" type="text" placeholder="Nome..."> 
@@ -26,3 +28,5 @@
     </form>
 
 <h1>fala povao</h1>
+</body>
+{%endblock%}
