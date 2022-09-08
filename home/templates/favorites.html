@@ -1,0 +1,44 @@
+<!doctype	html>
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+<head>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+    {% block content%}
+    <div>
+        <ul>
+            <li class="shadow p-3 mb-5 bg-white rounded">
+            <div class="media">
+                <img class="align-self-center mr-3" src="url({% static 'img/67c43ba255b343835bd4963c75d94688.jpg'%});" alt="Imagem de exemplo genérica">
+                <div class="media-body">
+                  <h5 class="mt-0">Mídia centralizada</h5>
+                  <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                  <p class="mb-0">Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                </div>
+              </div>
+        </li>
+
+
+        <li class="shadow p-3 mb-5 bg-white rounded">
+            <div class="media">
+                <img class="align-self-center mr-3" src="url({% static 'img/67c43ba255b343835bd4963c75d94688.jpg'%});" alt="Imagem de exemplo genérica">
+                <div class="media-body">
+                  <h5 class="mt-0">Mídia centralizada</h5>
+                  <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                  <p class="mb-0">Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                </div>
+              </div>
+        </li>
+    </ul>
+
+</div>
+</body>
+{%endblock%}

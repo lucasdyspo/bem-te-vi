@@ -1,0 +1,95 @@
+<!doctype	html>
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+<head>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+    {% block content%}
+    
+            <div class="container">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <h2 class="navbar-brand" href="#">Privacity</h2>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <h2 class="nav-link" href="#">Accounts <span class="sr-only">(Página atual)</span></h2>
+                </li>
+                <li class="nav-item">
+                    <h2 class="nav-link" href="#">Connected Apps</h2>
+                </li>
+                <li class="nav-item">
+                    <h2 class="nav-link" href="#">Edit</a>
+                </li>
+                </ul>
+            </div>
+            </nav>
+             </div>
+        
+
+             <form>
+                <div class="form">
+                  <div class="col">
+                    <input type="text" class="form-control" placeholder="Cidade">
+                  </div>
+                  <div class="col">
+                    <input type="text" class="form-control" placeholder="Estado">
+                  </div>
+                  <div class="col">
+                    <input type="text" class="form-control" placeholder="CEP">
+                  </div>
+                </div>
+              </form>
+        <br>
+        <br>
+        <br>
+
+
+
+        <div>
+            <table class="table table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">App</th>
+                    <th scope="col">User Name</th>
+                    <th scope="col">Active</th>
+                    <th scope="col">unlinked</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
+
+        </div>
+        
+</body>
+{%endblock%}

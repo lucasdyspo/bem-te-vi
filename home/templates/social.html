@@ -1,0 +1,82 @@
+<!doctype	html>
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+<head>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+    {% block content%}
+
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Primeiro</th>
+        <th scope="col">Último</th>
+        <th scope="col">Nickname</th>
+        <th scope="col">Chat</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>@mdo</td>
+        <td>
+            
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  seguindo
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">não seguir</a>
+                  <a class="dropdown-item" href="#">desfazer amizade</a>
+                  <a class="dropdown-item" href="#">Ver Primeiro</a>
+                </div>
+              </div>
+
+        </td>
+        <td>
+            <button type="button" class="btn btn-outline-danger">msg</button>
+        </td>
+        
+      </tr>
+
+      {% for nome in nomes %}
+
+        <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{nome}}</td>
+            <td>Thornton</td>
+            <td><div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                seguindo
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">não seguir</a>
+                <a class="dropdown-item" href="#">desfazer amizade</a>
+                <a class="dropdown-item" href="#">Ver Primeiro</a>
+                </div>
+            </div></td>
+            <td>
+                <button type="button" class="btn btn-outline-danger">msg</button>
+            </td>
+        </tr>
+        {%empty%}
+        <h1 class='tittle'> you still don't have friends </h1>
+
+        {% endfor %}
+      
+    </tbody>
+  </table>
+  
+
+</body>
+{%endblock%}
