@@ -1,0 +1,233 @@
+css
+	/*display: flex;*/
+	/*align-items: center;*/
+
+}
+
+
+.temp_accounts h1 {
+	padding: 2rem;
+}
+
+.temp_accounts li {
+	padding:0;
+	background-color: transparent;
+}
+
+.img_profile{
+	width: 80px;
+	height: 80px;
+	border-radius: 25px;
+	background-color: white;
+}
+
+ul{
+	list-style: none;
+}
+
+
+#apos{
+	display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+html
+
+
+
+
+
+<header>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="bem.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</header>
+
+
+
+<div class=container>
+<div class='temp_accounts shadow-none p-3 mb-5'>
+<h1>Editar Perfil</h1>
+<div class="row">
+
+<button class="btn">Alterar Foto</button>
+
+<div class="img_profile">
+</div>
+<ul class="col-12">
+	<li>attribute 1</li>
+	<li>atribute 2ss</li>
+	<li>seil mais iso</li>
+	<li>o ulitmo isso</li>
+</ul>
+</div>
+
+<form class="row g-3">
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Nickname</label>
+    <input type="email" class="form-control" id="inputEmail4">
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Your Name</label>
+    <input type="password" class="form-control" id="inputPassword4">
+  </div>
+ <div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  <div class="col-md-6">
+    <label for="inputCity" class="form-label">City</label>
+    <input type="text" class="form-control" id="inputCity">
+  </div>
+  <div class="col-md-6">
+    <label for="inputState" class="form-label">Country</label>
+    <select id="inputState" class="form-select">
+      <option selected>Choose...</option>
+      <option>...</option>
+    </select>
+  </div>
+  
+</div>
+  <div class="col-md-2">
+    <label for="inputZip" class="form-label">Zip</label>
+    <input type="text" class="form-control" id="inputZip">
+  </div>
+  <div class="col-12">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Check me out
+      </label>
+    </div>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">alterar</button>
+  </div>
+</form>
+</div>
+</div>
+
+<ul class="list-group">
+  <li class="list-group-item active">Cras justo odio</li>
+  <li class="list-group-item">Dapibus ac facilisis in</li>
+  <li class="list-group-item">Morbi leo risus</li>
+  <li class="list-group-item">Porta ac consectetur ac</li>
+  <li class="list-group-item">Vestibulum at eros</li>
+</ul>
+
+<div class=container>
+<div class='temp_accounts shadow-none p-3 mb-5'>
+<h1 class="container">oppppsssssssssssa</h1>
+<form>
+	<input type='text'>
+</form>
+<div class='temp_accounts col-md-6'>
+<form>
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">old password</label>
+    <input type="email" class="form-control" id="inputEmail4">
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">new password</label>
+    <input type="password" class="form-control" id="inputPassword4">
+  </div>
+  <br>
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">new password</label>
+    <input type="password" class="form-control" id="inputPassword4">
+  </div><br>
+  
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">alterar</button><br>
+  </div>
+</form>
+</div>
+</div>
+</div>
+
+
+<div class=container>
+<div class='temp_accounts shadow-none p-3 mb-5'>
+
+<ul class="list-group col-md-6">
+  <li class="list-group-item">lucas@yahoo.com</li>
+  <li class="list-group-item active">emailfakedalolo@linda.com</li>
+  <li class="list-group-item">emailfakedalolo@linda.com</li>
+  <li class="list-group-item">toflertando@sexo.com</li>
+</ul>
+
+<form>
+  <div class="col-md-6">
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">new password</label>
+    <input type="password" class="form-control" id="inputPassword4">
+  </div><br>
+  
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">alterar</button><br>
+  </div>
+</form>
+</div>
+</div>
+
+
+<div class=container>
+<div class='temp_accounts shadow-none p-3 mb-5'>
+	<div class="img_profile">
+</div>
+
+
+	<h1> eaaaail de verificação</h1>
+	<p>Agora sim, nossa página deve estar bem bacana.
+
+Note que com pouquíssimas linhas de código eu criei um SPA completo, ele carrega toda a aplicação de uma vez e depois disso o usuário não precisa mais ver o refresh da página.
+
+Vale lembrar que este é um exemplo simples, eu já criei um painel de gerênciamento de site</p>
+</div>
+</div>
+
+
+<div class=container>
+<div class='temp_accounts shadow-none p-3 mb-5'>
+	<ul>
+		<li id='apos'>
+			<div class="img_profile"></div>
+			<label>rede 1</label>
+			<h2>issu memo</h2>
+		</li>
+		<li>
+			<div class="img_profile"></div>
+			<label>rede 1</label>
+			<h2>issu memo</h2>
+		</li>
+
+		<li>
+			<div class="img_profile"></div>
+			<label>rede 1</label>
+			<h2>issu memo</h2>
+		</li>
+
+		<li>
+			<div class="img_profile"></div>
+			<label>rede 1</label>
+			<h2>issu memo</h2>
+		</li>
+
+	</ul>
+
+</div>
+</div>
