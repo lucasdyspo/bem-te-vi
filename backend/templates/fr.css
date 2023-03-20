@@ -1,0 +1,133 @@
+.block {
+    max-width: 700px;
+    border: solid;
+    font-size: medium;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.block h3 {
+    font-size: smaller;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.block button {
+    font-size: small;
+    white-space: nowrap;
+}
+
+.block p {
+    font-size: small;
+}
+
+.block table {
+    padding: 2rem;
+    margin-bottom: 10px;
+}
+
+.block tr {
+    max-width: 50%;
+
+}
+
+.block tr:hover {
+    background-color: rgba(157, 157, 157, 0.393);
+    transition: 0.2s;
+}
+
+.block td {
+    max-width: 115px;
+    max-height: fit-content;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: inherit;
+}
+
+.profile_thumb {
+    height: 3rem;
+    width: 3rem;
+    background-color: rgb(159, 0, 0);
+    border-radius: 50%;
+    border: none;
+    margin-right: 0.6rem;
+}
+
+.lab {
+    background-color: brown;
+    margin-top: 1rem;
+    padding: 4px;
+}
+
+#searchfriend {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}.block {
+    max-width: 700px;
+    border: solid;
+    border-width: 0px 0px 1px 0px;
+    font-size: medium;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.block h3 {
+    font-size: smaller;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.block button {
+    font-size: small;
+    white-space: nowrap;
+}
+
+.block p {
+    font-size: small;
+}
+
+.block table {
+    padding: 2rem;
+    margin-bottom: 10px;
+}
+
+.block tr {
+    max-width: 50%;
+}
+
+.block tr:hover {
+    background-color: rgba(157, 157, 157, 0.393);
+    transition: 0.2s;
+}
+
+.block td {
+    max-width: 115px;
+    max-height: fit-content;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 2rem;
+}
+
+.profile_thumb {
+    height: 3rem;
+    width: 3rem;
+    background-color: rgb(178, 124, 124);
+    border-radius: 50%;
+    border: none;
+    margin-right: 0.6rem;
+}
+
+.lab {
+    background-color: brown;
+    margin-top: 1rem;
+    padding: 4px;
+}
+
+#searchfriend {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}

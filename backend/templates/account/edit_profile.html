@@ -1,0 +1,44 @@
+{% extends "account/base.html" %}
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+
+
+{% block content %}
+
+
+ <form method="post" action=".">{% csrf_token %}
+    <label class="form-label fs-1" > Your Username</label>
+    <input class="form-control" type="text" id="username" placeholder={{user.username}}>
+    <label class="form-label fs-1" > Your Username</label>
+    <div class="form-floating">
+      <textarea class="form-control" placeholder="{{user.bio}}" id="bio" style="height: 100px"></textarea>
+    <label for="floatingTextarea2">bio</label>
+    <label class="form-label md" > Your Username</label>
+
+    <input class="form-control" type="text" id="country" placeholder="{{user.country}}">
+    <label class="form-label d-flex" > Your Username</label>
+
+    <input class="form-control col6" type="date" id='Birth' placeholder="">
+    <label class="form-label col3" > Your Username</label>
+
+    <input class="form-control row3 sm" stype="url" id ='twitter' placeholder="{{user.twitter}}">
+    <input class="form-control" type="link" id ='linkedin' placeholder="{{user.linkedin}}">
+    <input class="form-control" type="text" id="instagram" placeholder="{{user.instagram}}">
+    <input class="btn" type="submit" value="profile">
+
+</form>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+</body>
+</html>

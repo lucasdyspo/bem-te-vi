@@ -16,6 +16,7 @@
 </head>
 
 <body>
+
   {% include 'includes/sentry_init.html' %}
 
   <!-- Body Content -->
@@ -26,6 +27,11 @@
 
   <!-- Webpack rendered Javascript -->
   {% render_bundle 'main' 'js' 'DEFAULT' %}
-  {% block scripts %}{% endblock %}
+  {% block scripts %}
+
+  
+
+  {% endblock %}
+
 </body>
 </html>

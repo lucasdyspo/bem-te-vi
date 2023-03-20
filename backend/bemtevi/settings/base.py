@@ -17,17 +17,23 @@ SITE_ID = 1
 
 DEBUG = True
 
-ADMINS = (("Admin", "foo@example.com"),)
+ADMINS = (("Admin", "lucasgabriel400@ymail.com"),)
 
 AUTH_USER_MODEL = "users.User"
 
 ALLOWED_HOSTS = []
 
 DATABASES = {
-    "default": config("DATABASE_URL", cast=db_url),
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': r"C:\Users\DEVs\Desktop\Bem-Te-Vi\django-react-boilerplate\backend\db.sqlite3",
+    }
 }
 
 INSTALLED_APPS = [
+
+    "django.contrib.sites",
+
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -40,6 +46,14 @@ INSTALLED_APPS = [
     "rest_framework",
     "common",
     "users",
+
+    #allauth
+
+    "allauth.account",
+    "allauth.socialaccount",
+    'allauth.socialaccount.providers.instagram',
+
+
 ]
 
 MIDDLEWARE = [
@@ -54,12 +68,13 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "{{project_name}}.urls"
+ROOT_URLCONF = "bemtevi.urls"
 
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [base_dir_join("templates")],
+        # "APP_DIRS" : True,
         "OPTIONS": {
             "context_processors": [
                 "django.template.context_processors.debug",
@@ -68,6 +83,8 @@ TEMPLATES = [
                 "django.contrib.messages.context_processors.messages",
                 "common.context_processors.sentry_dsn",
                 "common.context_processors.commit_sha",
+                'django.template.context_processors.request',
+
             ],
             "loaders": [
                 (
@@ -82,7 +99,62 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "{{project_name}}.wsgi.application"
+#allauth
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+]
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+]
+SITE_ID = 1
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+LOGIN_REDIRECT_URL = '/home/'
+SIGNUP_REDIRECT_URL = '/aquele lanche'
+ACCOUNT_SESSION_REMEMBER = True
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = "email"
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
+LOGIN_URL = '/accounts/login/'
+ACCOUNT_EMAIL_VERIFICATION = None
+ACCOUNT_EMAIL_CONFIRMATION_COOLDOWN = 400
+ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 10
+# ACCOUNT_LOGOUT_REDIRECT_URL (=`configurações.LOGOUT_REDIRECT_URL ou “/” ` ) pagina apresentação
+
+SOCIALACCOUNT_PROVIDERS = {
+    'facebook': {
+        'METHOD': 'oauth2',
+        'SDK_URL': '//connect.facebook.net/{locale}/sdk.js',
+        'SCOPE': ['email', 'public_profile'],
+        'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
+        'INIT_PARAMS': {'cookie': True},
+        'FIELDS': [
+            'id',
+            'first_name',
+            'last_name',
+            'middle_name',
+            'name',
+            'name_format',
+            'picture',
+            'short_name'
+        ],
+        'EXCHANGE_TOKEN': True,
+        'LOCALE_FUNC': 'path.to.callable',
+        'VERIFIED_EMAIL': False,
+        'VERSION': 'v13.0',
+        'GRAPH_API_URL': 'https://graph.facebook.com/v13.0',
+    }
+}
+
+
+
+
+
+
+WSGI_APPLICATION = "bemtevi.wsgi.application"
 
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",},
@@ -143,3 +215,7 @@ SESSION_COOKIE_SAMESITE = None
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+
+

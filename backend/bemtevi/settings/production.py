@@ -5,7 +5,7 @@ from sentry_sdk.integrations.django import DjangoIntegration
 from .base import *  # noqa
 
 
-DEBUG = False
+DEBUG = True
 
 SECRET_KEY = config("SECRET_KEY")
 
@@ -19,7 +19,7 @@ STATIC_URL = "/static/"
 MEDIA_ROOT = base_dir_join("mediafiles")
 MEDIA_URL = "/media/"
 
-SERVER_EMAIL = "foo@example.com"
+SERVER_EMAIL = "lucasgabriel400@ymail.com"
 
 EMAIL_HOST = "smtp.sendgrid.net"
 EMAIL_HOST_USER = config("SENDGRID_USERNAME")

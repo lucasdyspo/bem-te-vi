@@ -25,4 +25,4 @@ RUN apt-get purge libpq-dev -y && apt-get autoremove -y && \
 ADD backend/ /home/user/app/backend
 
 USER user
-CMD gunicorn {{project_name}}.wsgi --log-file - -b 0.0.0.0:8000 --reload
+CMD gunicorn bemtevi.wsgi --log-file - -b 0.0.0.0:8000 --reload

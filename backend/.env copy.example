@@ -1,0 +1,5 @@
+DJANGO_SETTINGS_MODULE=bemtevi.settings.local
+CELERY_BROKER_URL=amqp://broker:5672//
+# Please choose postgres or sqlite as your DB:
+# DATABASE_URL=postgres://bemtevi:password@db:5432/bemtevi
+# DATABASE_URL=sqlite:///backend/db.sqlite3
