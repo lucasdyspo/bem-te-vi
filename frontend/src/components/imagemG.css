@@ -1,0 +1,12 @@
+section {
+    display: flex;
+    width: 60%;
+    height: 584px;
+    left: 288px;
+    top: 245px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    margin: 40px;
+    align-items: end;
+    flex-direction: row-reverse;
+}

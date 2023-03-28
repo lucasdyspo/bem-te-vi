@@ -1,0 +1,37 @@
+.hgs {
+    height: 100%;
+    background-color: blue;
+    position: fixed;
+    display: flex;
+    flex-direction: row-reverse;
+    position: absolute;
+    right: 0px;
+    padding: 3rem 0 0 3rem;
+    direction: rtl;
+    overflow: auto;
+    width: 15rem;
+
+}
+
+
+
+.hgs::-webkit-scrollbar{
+    width: 6px;
+    background-color: #db2323;
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border-radius: 10px;
+  }
+  
+  body::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #F5F5F5;
+  }

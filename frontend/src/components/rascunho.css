@@ -1,0 +1,12 @@
+.rasc {
+    background-color: aqua;
+    width: 500px;
+    height: 400px;
+}
+
+.window {
+    background-color: yellowgreen;
+    width: 80px;
+    height: 80px;
+    position: fixed;
+}

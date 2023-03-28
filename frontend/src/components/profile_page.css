@@ -1,0 +1,12 @@
+.margin {
+    margin-top: 9rem
+}
+
+.op {
+    display: inline-flex;
+    list-style: none;
+    width: 62%;
+    padding-left: 200px;
+    justify-content: space-around;
+    padding-right: 200px;
+}

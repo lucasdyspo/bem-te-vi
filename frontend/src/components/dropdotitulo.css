@@ -1,0 +1,40 @@
+nav {
+    color: rgb(255, 255, 255);
+    background: rgba(240, 121, 96, 0.49);
+    border-radius: 10px 0 0 10px;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 18%;
+    overflow: hidden;
+    border-radius: 10px 0 0 10px;
+    color: white;
+    padding-right: 8rem;
+}
+
+nav:hover {
+    height: auto;
+    width: 790px;
+    background: rgba(240, 121, 96);
+    cursor: url(handwriten.png), auto;
+    min-height: 18%;
+}
+
+h4 {
+    text-align: start;
+    margin-top: 15px;
+    margin-bottom: 1px;
+}
+
+.profile {
+    width: 3rem;
+    border: 2px;
+    border: solid;
+    border-radius: 20px;
+    height: 3rem;
+    margin-left: 8px;
+    margin-top: 8px;
+    margin-right: 10px;
+}

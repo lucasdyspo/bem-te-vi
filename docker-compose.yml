@@ -4,9 +4,9 @@ services:
   db:
     image: "postgres:alpine"
     environment:
-      - POSTGRES_USER={{project_name}}
+      - POSTGRES_USER=bemtevi
       - POSTGRES_PASSWORD=password
-      - POSTGRES_DB={{project_name}}
+      - POSTGRES_DB=bemtevi
     ports:
       - "5432"
     volumes:
@@ -65,4 +65,4 @@ services:
 volumes:
   dbdata:
     external:
-      name: {{project_name}}_dbdata
+      name: bemtevi_dbdata

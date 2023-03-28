@@ -3,6 +3,11 @@
 {% load account socialaccount %}
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
+<head>
+  <link rel="stylesheet" href=".fr.css">
+  <link rel="stylesheet" href="./fr.css">
+  <link rel="stylesheet" href="/fr.css">
+</head>
 
 
 
@@ -10,25 +15,56 @@
 
 
  <form method="post" action=".">{% csrf_token %}
-    <label class="form-label fs-1" > Your Username</label>
-    <input class="form-control" type="text" id="username" placeholder={{user.username}}>
-    <label class="form-label fs-1" > Your Username</label>
-    <div class="form-floating">
-      <textarea class="form-control" placeholder="{{user.bio}}" id="bio" style="height: 100px"></textarea>
-    <label for="floatingTextarea2">bio</label>
-    <label class="form-label md" > Your Username</label>
+  <div class="d-flex justify-content-between">
+    <div>
+    <label class="form-label fs-1"> Your Username</label>
+    <input class="form-control" type="text" id="username" placeholder="lukitadafalera">
+  </div>
+  
+    <div class="img_profile">
+    <img src="">
 
-    <input class="form-control" type="text" id="country" placeholder="{{user.country}}">
-    <label class="form-label d-flex" > Your Username</label>
+  </div>
 
-    <input class="form-control col6" type="date" id='Birth' placeholder="">
-    <label class="form-label col3" > Your Username</label>
+  </div>
 
-    <input class="form-control row3 sm" stype="url" id ='twitter' placeholder="{{user.twitter}}">
-    <input class="form-control" type="link" id ='linkedin' placeholder="{{user.linkedin}}">
-    <input class="form-control" type="text" id="instagram" placeholder="{{user.instagram}}">
-    <input class="btn" type="submit" value="profile">
 
+
+
+  <label class="form-label fs-1"> Your Name</label>
+  <input class="form-control" type="text" id="name" name="name" placeholder={{user.name}}>
+  <label class="form-label fs-1">bio</label>
+  <div class="form-floating">
+    <textarea class="form-control" name="bio" placeholder={{user.bio}} id="bio" style="height: 100px"></textarea>
+  <label for="floatingTextarea2"></label>
+  <span></span>
+  <div class="d-flex justify-content-between">
+      <div>
+      <label class="form-label md"> Country</label>
+          <input class="form-control" type="text" name="country" id="country" placeholder={{user.country}}>
+      </div>
+      <div>
+      <label class="form-label d-flex"> Birthy</label>
+          <input class="form-control" type="date" name="birth"id="Birth" placeholder="">
+      </div>
+  </div>
+
+  <h5 class="text-center"> links socials </h5>
+  <div class="d-flex justify-content-between social">
+      <div class="">
+          <label> twitter</label>
+          <input class="form-control social" type="url" name="twitter" id="twitter" placeholder={{user.twitter}}>
+          <label> Linkedin</label>
+          <input class="form-control social" type="link" id="linkedin" name="linkedin" placeholder={{user.linkedin}}>
+      </div>
+      <div>
+          <label> Instagram</label>
+          <input class="form-control social" type="text" id="instagram" name="instagram" placeholder={{user.instagram}}>
+          <label> Behance</label>
+          <input class="form-control social" type="link" id="behance" name="behance" placeholder={{user.behance}}>
+      </div>
+  </div>
+  <input type="submit">
 </form>
 
 

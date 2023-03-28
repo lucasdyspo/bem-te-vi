@@ -1,0 +1,27 @@
+.lateral {
+    height: 400px;
+    height: 400px;
+    width: 400px;
+    overflow: auto;
+    border: 6px;
+    border: solid;
+    border-radius: 15px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.lateral p {
+    color: white;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+.lateral h3 {
+    color: greenyellow;
+}
+
+.lateral img {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+}

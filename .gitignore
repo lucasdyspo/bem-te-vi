@@ -32,7 +32,9 @@ npm-debug.log
 *.map
 
 # General
-/{{project_name}}-venv/
+/myenv/
+/bemtevi-myvenv/
+/bemtevi-venv/
 /venv/
 /env/
 /output/

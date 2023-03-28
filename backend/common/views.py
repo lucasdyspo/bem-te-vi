@@ -1,5 +1,5 @@
 from django.views import generic
-
+from django.http import HttpResponse
 from rest_framework import viewsets, status
 from rest_framework.decorators import action
 from rest_framework.response import Response
@@ -22,3 +22,11 @@ class RestViewSet(viewsets.ViewSet):
             {"result": "If you're seeing this, the REST API is working!"},
             status=status.HTTP_200_OK,
         )
+
+
+
+class IndexVieww(viewsets.ViewSet):
+
+
+
+    HttpResponse('isso aí j')

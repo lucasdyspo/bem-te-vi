@@ -1,0 +1,45 @@
+.ballons_p {
+    width: 133px;
+    height: 35px;
+    background: #F07960;
+    border-radius: 22px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.8rem;
+    align-items: center;
+}
+
+.ballons_p h1 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 26px;
+}
+
+.ballons_pb {
+    width: 133px;
+    height: 35px;
+    background: transparent;
+    border-radius: 22px;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #F07960;
+}
+
+.ballons_pb h1 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 26px;
+}
+
+#flexx {
+    width: 600px;
+    display: inline-flex;
+    justify-content: space-around
+}

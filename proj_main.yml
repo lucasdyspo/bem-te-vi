@@ -3,7 +3,7 @@ on: [push, pull_request]
 
 jobs:
   build:
-    name: Build {{project_name}}
+    name: Build bemtevi
     strategy:
       matrix:
         python: [3.8]
@@ -67,7 +67,7 @@ jobs:
       - name: Style check
         run: prospector --messages-only
         env:
-          DJANGO_SETTINGS_MODULE: '{{project_name}}.settings.local_base'
+          DJANGO_SETTINGS_MODULE: 'bemtevi.settings.local_base'
           SECRET_KEY:  ${% templatetag openvariable %} steps.secret_id_generator.outputs.SECRET_KEY {% templatetag closevariable %}
           DATABASE_URL: 'sqlite:///'
           ALLOWED_HOSTS: '.example.org'
@@ -85,7 +85,7 @@ jobs:
         working-directory: backend
       - run: python manage.py check --deploy
         env:
-          DJANGO_SETTINGS_MODULE: '{{project_name}}.settings.production'
+          DJANGO_SETTINGS_MODULE: 'bemtevi.settings.production'
           SECRET_KEY:  ${% templatetag openvariable %} steps.secret_id_generator.outputs.SECRET_KEY {% templatetag closevariable %}
           DATABASE_URL: 'sqlite:///'
           ALLOWED_HOSTS: '.example.org'

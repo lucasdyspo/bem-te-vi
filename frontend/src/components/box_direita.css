@@ -1,0 +1,22 @@
+.box_direita {
+    border: 1px solid black;
+    width: 24rem;
+    height: 14rem;
+    overflow: hidden;  
+}
+
+
+
+.box_direita p{
+    overflow-wrap: unset;
+
+}
+
+/* .box_direita div {
+    height: 200px;
+} */
+
+
+.box_direita h1 {
+    color: green;
+}

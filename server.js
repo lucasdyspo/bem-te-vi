@@ -2,10 +2,10 @@
 import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
 
-import config from './webpack.local.config';
+import baseConfig from './webpack.local.config.cjs';
 
-new WebpackDevServer(webpack(config), {
-  publicPath: config.output.publicPath,
+new WebpackDevServer(webpack(baseConfig), {
+  publicPath: baseConfig.output.publicPath,
   port: 3000,
   hot: true,
   inline: true,

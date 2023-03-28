@@ -1,0 +1,36 @@
+.shadow {
+    /* position: absolute; */
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(360deg, #000000 -7.34%, rgba(0, 0, 0, 0.82) 25.04%, rgba(196, 196, 196, 0) 97.18%);
+}
+
+.shadow:hover {
+    background: linear-gradient(360deg, #000000 -7.34%, rgba(0, 0, 0, 0.82) 15.04%, rgba(196, 196, 196, 0) 45.18%);
+}
+
+.box_direita {
+    width: 300px;
+    overflow: hidden;
+    height: 300px;
+    border: 3px solid;
+    box-sizing: border-box;
+    background-image: url('./1_R86yzg4zKi2Ysd9EOdiDtQ.png');
+    border-radius: 44px 0px 0px 44px;
+    width: 370.45px;
+    height: 247.02px;
+    border: linear;
+    /* border-image: linear-gradient( to bottom, red, rgba(0, 0, 0, 0)) 1 100%; */
+}
+
+.box_direita h1 {
+    color: green;
+    position: relative;
+    /* font-size: x-large; */
+}
+
+.box_direita p {
+    color: white;
+}

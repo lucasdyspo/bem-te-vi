@@ -17,8 +17,9 @@ class User(AbstractBaseUser, PermissionsMixin, IndexedTimeStampedModel):
     bio = models.TextField(max_length=60, null=True, blank=True)
     # birth = models.DateField(null=True, blank=True, default=None)
     country = models.CharField(max_length=40, null=True, blank=True, verbose_name=_('country'))
-    # age = models.IntegerField()
 
+    # age = models.IntegerField()
+    img = models.ImageField(upload_to='profiles', blank=True, null=True)
     twitter = models.URLField(max_length=200, null=True, blank=True)
     linkedin = models.URLField(max_length=200, null=True, blank=True)
     instagram = models.URLField(max_length=200, null=True, blank=True)
@@ -147,11 +148,6 @@ class FriendshipRequest(models.Model):
         friendship_request_viewed.send(sender=self)
         self.save()
         return True
-
-
-
-
-
 
 
 

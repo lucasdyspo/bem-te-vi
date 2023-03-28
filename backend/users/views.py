@@ -1,6 +1,10 @@
-from django.shortcuts import render  # noqa
+from django.shortcuts import render, redirect
 from django import forms
 from django.http import HttpRequest, HttpResponse
+from rest_framework.generics import *
+from .models import User
+
+from .serializers import ProfileSerializer
 
 
 
@@ -24,6 +28,12 @@ class ProfileForm(forms.Form):
 
 def EditProfile(request):
 
+
+    lista = []
+    # def __valid_form(obj):
+
+
+
     set_profile = ProfileForm()
     # print(user)
     user = request.user
@@ -41,9 +51,46 @@ def EditProfile(request):
 
 
     else:
-        set_profile = ProfileForm
-        form_profile = set_profile(request.POST)
-        # print(dir(form_profile))
-        print(dir(form_profile.data))
-        print(dir(form_profile.visible_fields()))
+
+        username = request.POST.get('username')
+        name = request.POST.get('name')
+        bio = request.POST.get('bio')
+        country = request.POST.get('country')
+        birth = request.POST.get('birth')
+        linkedin = request.POST.get('linkedin')
+        instagram = request.POST.get('instagram')
+        twitter = request.POST.get('twitter')
+        behance = request.POST.get('behance')
+
+
+        # validate_and_execute = lambda x: None if x else pass
+
+
+
+
     return render(request, 'account/edit_profile.html', context=dic)
+
+
+
+
+
+
+
+class Profileview(ListAPIView):
+    serializer_class = ProfileSerializer
+
+    def get_queryset(self):
+        nick = self.kwargs.get('username')
+        queryset = User.objects.filter(username=nick)
+        print((self.request.user.username))
+        if nick == (self.request.user.username):
+            redirect('myuser/')
+        else:
+
+            return queryset
+
+
+
+
+
+
