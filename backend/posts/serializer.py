@@ -68,8 +68,9 @@ class HighlightsSerializer(serializers.ModelSerializer):
 class LikeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Likes
-        ordering = ['created_at', 'pk']
+        # ordering = ['created_at', 'pk']
         fields = '__all__'
+        read_only = 'User'
 
 
 

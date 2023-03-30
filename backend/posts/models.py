@@ -17,7 +17,7 @@ from django import forms
 
 
 class Post(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    # id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_author')
     collaborators = models.ManyToManyField(User, blank=True, related_name='users_collab')
     title = models.CharField(max_length=80)

@@ -7,7 +7,8 @@
 /mediafiles/*
 __pycache__/
 /.vscode/
-
+/migrations/
+/migrations
 # coverage result
 .coverage
 /coverage/

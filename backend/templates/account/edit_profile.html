@@ -20,7 +20,7 @@
     <label class="form-label fs-1"> Your Username</label>
     <input class="form-control" type="text" id="username" placeholder="lukitadafalera">
   </div>
-  
+
     <div class="img_profile">
     <img src="">
 
@@ -66,6 +66,29 @@
   </div>
   <input type="submit">
 </form>
+
+<button id="my-button" type="button" onclick="enviarRequisicao(2)">Enviar</button>
+<script>
+  function enviarRequisicao(art) {
+    const endpoint = 'http://127.0.0.1:8000/api/post/1/likes/';
+    const user = 2
+
+    fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ "User": user, "Post": art })
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data); // faça algo com os dados recebidos do servidor
+    })
+    .catch(error => {
+      console.error(error); // lida com erros de requisição
+    });
+  }
+</script>
 
 
 {% endblock %}

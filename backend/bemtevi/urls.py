@@ -37,6 +37,8 @@ urlpatterns = [
     path("home/", ArtView.as_view(), name='artview'),
     # path('search/<str:term>/', search_view, name='search')
     path("api/highlights/", HighlightsView.as_view(), name='hgs' ),
-path("api/post/", Api_post.as_view(), name='posts' )
+    path("api/post/", Api_post.as_view(), name='posts'),
+    path("api/post/<int:pk>/likes/", API_likes, name='likes'),
+    path("api/post/<int:pk>/like/", like_api.as_view(), name='like')
 ]
 
