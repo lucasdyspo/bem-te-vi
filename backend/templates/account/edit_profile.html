@@ -11,6 +11,34 @@
 
 
 
+<script>
+  function minhaFuncao(post) {
+    // faz alguma coisa com os parâmetros
+      const endpoint = 'http://127.0.0.1:8000/api/post/{post}/likes/';
+      fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({"Post": art })
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data); // faça algo com os dados recebidos do servidor
+      })
+      .catch(error => {
+        console.error(error); // lida com erros de requisição
+      });
+
+
+    }
+
+
+
+
+</script>
+
+
 {% block content %}
 
 
@@ -22,12 +50,14 @@
   </div>
 
     <div class="img_profile">
-    <img src="">
+
+      <img id='imgpro' src="http://g-ecx.images-amazon.com/images/G/01/lwa/btnLWA_gry_195x46.png">
+
+    <input id="imginp" name='img' type="file" accept="image/*" placeholder="choose">
 
   </div>
 
   </div>
-
 
 
 
@@ -67,28 +97,7 @@
   <input type="submit">
 </form>
 
-<button id="my-button" type="button" onclick="enviarRequisicao(2)">Enviar</button>
-<script>
-  function enviarRequisicao(art) {
-    const endpoint = 'http://127.0.0.1:8000/api/post/1/likes/';
-    const user = 2
-
-    fetch(endpoint, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ "User": user, "Post": art })
-    })
-    .then(response => response.json())
-    .then(data => {
-      console.log(data); // faça algo com os dados recebidos do servidor
-    })
-    .catch(error => {
-      console.error(error); // lida com erros de requisição
-    });
-  }
-</script>
+<button id="my-button" type="button" onclick="minhaf(2)">Enviar</button>
 
 
 {% endblock %}

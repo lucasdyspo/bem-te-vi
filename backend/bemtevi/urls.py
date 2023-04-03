@@ -9,6 +9,7 @@ from rest_framework.routers import DefaultRouter
 from common.routes import routes as common_routes
 from posts.views import *
 from rest_framework import routers
+from users.views import Profileview
 
 router = routers.DefaultRouter()
 print(dir(router))
@@ -39,6 +40,7 @@ urlpatterns = [
     path("api/highlights/", HighlightsView.as_view(), name='hgs' ),
     path("api/post/", Api_post.as_view(), name='posts'),
     path("api/post/<int:pk>/likes/", API_likes, name='likes'),
-    path("api/post/<int:pk>/like/", like_api.as_view(), name='like')
+    path("api/post/<int:pk>/like/", like_api.as_view(), name='like'),
+    path('teste/', Profileview.as_view())
 ]
 

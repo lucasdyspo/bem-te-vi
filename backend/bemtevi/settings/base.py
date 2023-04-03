@@ -48,6 +48,9 @@ INSTALLED_APPS = [
     "users",
     "posts",
 
+    # cors
+    "corsheaders",
+
     #allauth
 
     "allauth.account",
@@ -58,6 +61,9 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    # cors
+    'corsheaders.middleware.CorsMiddleware',
+
     "debreach.middleware.RandomCommentMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
@@ -167,12 +173,12 @@ AUTH_PASSWORD_VALIDATORS = [
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 10,
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.SessionAuthentication',
-    ],
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
-    ],
+    # 'DEFAULT_AUTHENTICATION_CLASSES': [
+    #     'rest_framework.authentication.SessionAuthentication',
+    # ],
+    # 'DEFAULT_PERMISSION_CLASSES': [
+    #     'rest_framework.permissions.IsAuthenticated',
+    # ],
 }
 
 LANGUAGE_CODE = "en-us"
@@ -217,6 +223,10 @@ SESSION_COOKIE_SAMESITE = None
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+# coors
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_WHITELIST = (
+  'http://localhost:8000',
+  'http://localhost:3000',
 
-
-
+)

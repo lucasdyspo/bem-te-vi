@@ -70,7 +70,7 @@ class Api_post(ListAPIView):
 
 @csrf_exempt
 def API_likes(request, pk):
-    serializer_class = LikeSerializer
+    # serializer_class = LikeSerializer
 
     if request.method == 'POST':
         req = int((str(request.body))[-3])

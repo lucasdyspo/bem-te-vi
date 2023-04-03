@@ -79,15 +79,16 @@ def EditProfile(request):
 class Profileview(ListAPIView):
     serializer_class = ProfileSerializer
 
-    def get_queryset(self):
-        nick = self.kwargs.get('username')
-        queryset = User.objects.filter(username=nick)
-        print((self.request.user.username))
-        if nick == (self.request.user.username):
-            redirect('myuser/')
-        else:
 
-            return queryset
+    def get_queryset(self):
+        print(dir(self.request))
+        id = self.request.user.id
+        print(id)
+        po = [id, 2]
+        queryset = User.objects.filter(id__in=po)
+        return queryset
+
+
 
 
 
