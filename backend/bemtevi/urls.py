@@ -41,6 +41,7 @@ urlpatterns = [
     path("api/post/", Api_post.as_view(), name='posts'),
     path("api/post/<int:pk>/likes/", API_likes, name='likes'),
     path("api/post/<int:pk>/like/", like_api.as_view(), name='like'),
-    path('teste/', Profileview.as_view())
+    path('teste/', Profileview.as_view()),
+    path('api/search/<str:q>/', search_view, name='search_view')
 ]
 

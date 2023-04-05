@@ -16,6 +16,7 @@ from django.http import HttpResponse
 
 
 
+
 class ArtView(ListAPIView):
 
 
@@ -75,7 +76,7 @@ def API_likes(request, pk):
     if request.method == 'POST':
         req = int((str(request.body))[-3])
 
-        print(req)
+
         post = Post.objects.get(id=req)
         user = User.objects.get(id=request.user.id)
         like = Likes(User=user, Post=post )
@@ -135,3 +136,16 @@ class like_api(CreateAPIView):
 
 
     #     return queryset
+
+
+
+
+
+def search_view(request, q, genre=None,  rating=0):
+    search_term = request.GET.get('q')
+    print(dir(request.GET))
+    print(request.GET)
+    # Faz algo com os resultados da pesquisa
+    return HttpResponse(status=404)
+# def search_view(request, q : str, genre : str,  rating : float = 0):
+
