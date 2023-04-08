@@ -57,6 +57,9 @@ INSTALLED_APPS = [
     "allauth.socialaccount",
     'allauth.socialaccount.providers.instagram',
 
+    # dango-seed
+    'django_seed',
+
 
 ]
 

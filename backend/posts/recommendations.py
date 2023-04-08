@@ -2,9 +2,31 @@ from nltk.stem.snowball import SnowballStemmer
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk import download
+import sys
+import os
+from django.db.models import Q
+
+# Adiciona o caminho ao diretório libs
+# libs_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'libs'))
+# sys.path.append(libs_path)
+from models import Post
 from users.models import User
-from posts.models import Post
-import requests
+
+
+
+# from ...users.models import User
+# from ...posts.models import Post
+# from ....backend.posts.models import Post
+
+
+# import requests
+# import numpy as np
+# import tensorrec
+
+
+
+
+
 
 # def get_location_by_ip(ip_address):
 #     response = requests.get(f"https://api.ipdata.co/{ip_address}?api-key=API_KEY")
@@ -69,16 +91,26 @@ class pull:
 
 
 class Posts_man:
-    limit = 3
-    def posts_search(self, word):
-        posts = Post.objects.filter(title__icontains=word)
+
+    search_limit = 3
+    random_limit = 10
+
+    def search_by_query(self, query):
+        # title_posts = Post.objects.filter(title__icontains=query)
+
+        # desc_posts = Post.objects.filter(description__icontains=query)
 
 
+        # # [:self.search_limit]
+        # posts = title_posts.union(desc_posts)
+        myposts = Post.objects.filter(Q(title__icontains=query) | Q(description__icontains=query))
+        return myposts
 
-
-    def lasts(self):
-        ...
+    def get_latest_posts(self):
+        posts = Post.objects.order_by('-created_at')[:10]
+        return posts
 
     @classmethod
-    def change_limit(cls):
-        ...
+    def set_search_limit(cls, limit):
+        """Método de classe para alterar o limite de resultados da busca."""
+        cls.search_limit = limit

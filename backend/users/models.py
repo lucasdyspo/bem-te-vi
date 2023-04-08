@@ -50,7 +50,10 @@ class User(AbstractBaseUser, PermissionsMixin, IndexedTimeStampedModel):
         return self.email
 
     def __str__(self):
-        return self.email
+        if self.username:
+            return self.username
+        else:
+            return self.email
 
     # @property
     # def is_staff(self):

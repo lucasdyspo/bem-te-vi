@@ -1,5 +1,6 @@
 from django.db import models
 from users.models import User
+
 from distutils.command.upload import upload
 from pickle import TRUE
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
@@ -36,8 +37,12 @@ class Post(models.Model):
     rate = models.FloatField
 
 
+
+    def __str__(self):
+        return f"{self.id}  {self.title}  by ::{self.author}"
+
+
     class Meta:
-        ordering = ['-createdAt', 'author']
         verbose_name_plural = "postagens"
 
 
@@ -71,6 +76,10 @@ class Likes(models.Model):
 
     class Meta:
         unique_together = [['Post', 'User']]
+
+
+    def __str__(self):
+        return f"{self.User} in {(str(self.Post))[0:10]}..."
 
 
 class Comment(models.Model):
