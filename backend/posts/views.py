@@ -13,6 +13,99 @@ from rest_framework.views import APIView, Response
 from django.views.decorators.csrf import csrf_exempt
 from colorama import *
 from django.http import HttpResponse
+from nltk.stem.snowball import SnowballStemmer
+from nltk.tokenize import word_tokenize
+from nltk.corpus import stopwords
+from nltk import download
+import sys
+import os
+from django.db.models import Q
+
+
+class recom:
+    def __init__(self, term, lang=None):
+
+        download('stopwords')
+
+
+        pula = '\n\n\n\n\n\n\n\n\n'
+        if lang == None:
+            self.lang = 'portuguese'
+        else:
+            self.lang = lang
+
+        stop_words = set(stopwords.words(self.lang))
+        print(self.lang, pula, stop_words)
+
+
+        self.stemmer = SnowballStemmer(self.lang)
+
+        print(self.stemmer, pula)
+
+        tokens = []
+
+        for li in (term.split()):
+            tokens.append(li)
+
+
+        print(self.stemmer, pula, tokens)
+
+        self.stop_words = stop_words
+
+        self.tokens = [token for token in tokens if not token in self.stop_words]
+        self.stemmed_tokens = [self.stemmer.stem(token) for token in tokens]
+
+        print(self.stemmed_tokens)
+
+
+
+# po = recom('sala pro quarto filhao')
+
+
+
+
+class pull:
+    def __init__(self, user):
+        self.user = user
+
+
+
+
+class Posts_man:
+
+    search_limit = 3
+    random_limit = 10
+
+    def search_by_query(self, query):
+        # title_posts = Post.objects.filter(title__icontains=query)
+
+        # desc_posts = Post.objects.filter(description__icontains=query)
+
+
+        # # [:self.search_limit]
+        # posts = title_posts.union(desc_posts)
+        myposts = Post.objects.filter(Q(title__icontains=query) | Q(description__icontains=query))
+        return myposts
+
+    def get_latest_posts(self):
+        # posts = Post.objects.order_by('-created_at')[:10]
+        pi = [6, 4, 12]
+        postsid = Post.objects.filter(id__in=pi)
+        return postsid
+
+
+    def get_random_posts(self):
+        post_ids = random.sample(list(Post.objects.values_list('id', flat=True)), k=self.random_limit)
+        posts = Post.objects.filter(id__in=post_ids)
+        return posts
+
+
+    @classmethod
+    def set_search_limit(cls, limit):
+        """Método de classe para alterar o limite de resultados da busca."""
+        cls.search_limit = limit
+
+
 
 
 
@@ -46,6 +139,23 @@ class HighlightsView(ListAPIView):
 
 
 
+# import re
+#     ...:
+#     ...: def query_to_words2(query):
+#     ...:     # Remover os símbolos de pontuação e transformar em minúsculas
+#     ...:     query = re.sub(r'[^\w\s+]', '', query).replace('+', ' ')
+#     ...:     # Dividir a string em uma lista de palavras
+#     ...:     words = query.split()
+#     ...:     # Retornar a lista de palavras
+#     ...:     return words
+#     ...:
+#  for i in range(0, len(lista)):
+#         ...:     postsid.union(lista[i])
+
+
+#  for query in fer:
+#         ...:     myposts = Post.objects.filter(Q(title__icontains=query) | Q(description__icontains=query))
+#     ...:     lista.append(myposts)
 
 
 class Commentspageapi(viewsets.ViewSet):
@@ -140,12 +250,23 @@ class like_api(CreateAPIView):
 
 
 
-
-def search_view(request, q, genre=None,  rating=0):
+@api_view(['GET'])
+def search_view(request, q=None, genre=None,  rating=0):
     search_term = request.GET.get('q')
-    print(dir(request.GET))
-    print(request.GET)
+    print(search_term)
+    posa=Posts_man().search_by_query(search_term)
+    print(posa)
+    # print(request.GET)
     # Faz algo com os resultados da pesquisa
-    return HttpResponse(status=404)
+    serializer = Postserializer(posa, many=True)
+    print(dir(serializer))
+    content = {'message': 'Hello, World!'}
+    return Response(serializer.data)
 # def search_view(request, q : str, genre : str,  rating : float = 0):
 
+
+
+
+def hello_world(request):
+    content = {'message': 'Hello, World!'}
+    return Response(content)

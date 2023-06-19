@@ -9,8 +9,6 @@ from django.db.models import Q
 # Adiciona o caminho ao diretório libs
 # libs_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'libs'))
 # sys.path.append(libs_path)
-from models import Post
-from users.models import User
 
 
 
@@ -107,8 +105,10 @@ class Posts_man:
         return myposts
 
     def get_latest_posts(self):
-        posts = Post.objects.order_by('-created_at')[:10]
-        return posts
+        # posts = Post.objects.order_by('-created_at')[:10]
+        pi = [6, 4, 12]
+        postsid = Post.objects.filter(id__in=pi)
+        return postsid
 
     @classmethod
     def set_search_limit(cls, limit):
