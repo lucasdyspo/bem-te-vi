@@ -4,18 +4,16 @@
 [![License: MIT](https://img.shields.io/github/license/vintasoftware/django-react-boilerplate.svg)](LICENSE.txt)
 
 ## About
-A [Django](https://www.djangoproject.com/) project boilerplate/template with lots of state of the art libraries and tools like:
-- [React](https://facebook.github.io/react/), for building interactive UIs
-- [django-js-reverse](https://github.com/ierror/django-js-reverse), for generating URLs on JS
-- [React Bootstrap](https://react-bootstrap.github.io/), for responsive styling
-- [Webpack](https://webpack.js.org/), for bundling static assets
-- [Celery](https://docs.celeryproject.org/), for background worker tasks
-- [WhiteNoise](http://whitenoise.evans.io/en/stable/) with [brotlipy](https://github.com/python-hyper/brotlipy), for efficient static files serving
-- [prospector](https://prospector.landscape.io/en/master/) and [ESLint](https://eslint.org/) with [pre-commit](https://pre-commit.com/) for automated quality assurance (does not replace proper testing!)
+The BemTeVi project was developed with the aim of creating a social network specialized in posting and sharing stories and artistic content.
 
 For continuous integration, a [Github Action](https://github.com/features/actions) configuration `.github/workflows/main.yml` is included.
+te
+the application is still under development for studies and practices
 
-Also, includes a Heroku `app.json` and a working Django `production.py` settings, enabling easy deployments with ['Deploy to Heroku' button](https://devcenter.heroku.com/articles/heroku-button). Those Heroku plugins are included in `app.json`:
+
+the project uses the MVT architecture, using several native or non-django libraries to compose part of its interface, and database, the use of React as the main library of the frontend site for better performance and ease of use
+
+
 - PostgreSQL, for DB
 - Redis, for Celery
 - Sendgrid, for e-mail sending
