@@ -113,7 +113,7 @@ class Posts_man:
 class ArtView(ListAPIView):
 
 
-    list_arts =  [5]
+    list_arts =  [5, 8, 9]
     serializer_class = Postserializer
     queryset = Post.objects.filter(pk__in=(list_arts)).prefetch_related('favorites')
     # print(dir(queryset[0]))
